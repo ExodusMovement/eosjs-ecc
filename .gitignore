@@ -3,5 +3,4 @@ package-lock.json
 npm-debug.log
 coverage
 test
-lib
 dist/*.js
