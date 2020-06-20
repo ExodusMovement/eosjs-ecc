@@ -21,16 +21,16 @@
     "test": "mocha --use_strict src/*.test.js",
     "test_lib": "mocha --use_strict lib/*.test.js",
     "coverage": "nyc --reporter=lcov --reporter=text npm test",
-    "coveralls": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "build": "yarn build_lib && yarn build_browser",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "build": "npm run build_lib && npm run build_browser",
     "build_lib": "rm -f lib/* && babel src --out-dir lib",
     "build_browser": "mkdir -p lib && browserify -o lib/eosjs-ecc.js -s eosjs_ecc lib/index.js",
-    "build_browser_test": "yarn build && browserify -o dist/test.js lib/*.test.js",
+    "build_browser_test": "npm run build && browserify -o dist/test.js lib/*.test.js",
     "documentation": "node_modules/documentation/bin/documentation.js",
     "minimize": "terser lib/eosjs-ecc.js -o lib/eosjs-ecc.min.js --source-map --compress --mangle",
-    "docs": "yarn documentation -- readme src/api_common.js --section \"Common API\" --shallow",
+    "docs": "npm run documentation -- readme src/api_common.js --section \"Common API\" --shallow",
     "srisum": "npx srisum lib/eosjs-ecc.*",
-    "prepublishOnly": "yarn build && yarn minimize && yarn test_lib && yarn docs"
+    "prepublishOnly": "npm run build && npm run minimize && npm run test_lib && npm run docs"
   },
   "repository": {
     "type": "git",
