@@ -13,9 +13,8 @@
   ],
   "main": "lib/index.js",
   "files": [
-    "README.md",
-    "docs",
-    "lib"
+    "lib",
+    "!lib/eosjs-ecc.*"
   ],
   "scripts": {
     "test": "mocha --use_strict src/*.test.js",
