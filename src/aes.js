@@ -1,5 +1,5 @@
 const randomBytes = require('randombytes')
-const ByteBuffer = require('bytebuffer')
+const ByteBuffer = require('@exodus/bytebuffer')
 const crypto = require('browserify-aes')
 const assert = require('assert')
 const PublicKey = require('./key_public')
